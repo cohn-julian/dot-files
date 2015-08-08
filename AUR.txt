@@ -1,3 +1,4 @@
+a52dec
 aalib
 accerciser
 accountsservice
@@ -66,6 +67,7 @@ clutter-gst
 clutter-gst2
 clutter-gtk
 cmake
+cmus
 cogl
 colord
 colord-gtk
@@ -349,12 +351,15 @@ libdaemon
 libdatrie
 libdbus
 libdca
+libdiscid
 libdmapsharing
 libdrm
 libdv
+libdvbpsi
 libdvdnav
 libdvdread
 libe-book
+libebml
 libedit
 libepoxy
 libetonyek
@@ -395,10 +400,12 @@ libinput
 libiptcdata
 libiscsi
 libjpeg-turbo
+libkate
 libksba
 libldap
 liblouis
 libmad
+libmatroska
 libmediaart
 libmm-glib
 libmms
@@ -406,6 +413,8 @@ libmng
 libmodplug
 libmp4v2
 libmpc
+libmpcdec
+libmpeg2
 libmspub
 libmusicbrainz5
 libmwaw
@@ -458,17 +467,20 @@ libsrtp
 libssh
 libssh2
 libsystemd
+libtar
 libtasn1
 libteam
 libthai
 libtheora
 libtiff
+libtiger
 libtirpc
 libtool
 libtracker-sparql
 libtxc_dxtn
 libunistring
 libunwind
+libupnp
 libusb
 libusbmuxd
 libutempter
@@ -662,6 +674,7 @@ sbc
 schroedinger
 scrnsaverproto
 sdl
+sdl_image
 seahorse
 sed
 serf
@@ -735,6 +748,7 @@ vim
 vim-runtime
 vinagre
 vino
+vlc
 volwheel
 vte
 vte-common
@@ -825,3 +839,4 @@ zita-alsa-pcmi
 zita-resampler
 zlib
 zsh
+zvbi
