@@ -43,6 +43,7 @@ filesystem
 findutils
 firefox
 five-or-more
+flashplugin
 flex
 four-in-a-row
 gamin
@@ -119,6 +120,7 @@ inetutils
 iproute2
 iputils
 jfsutils
+konversation
 less
 libreoffice-fresh
 licenses
@@ -173,6 +175,7 @@ tar
 texinfo
 totem
 tracker
+transmission-gtk
 ttf-font-awesome
 ttf-hanazono
 ttf-oxygen
@@ -188,6 +191,7 @@ vinagre
 vino
 vlc
 volwheel
+weechat
 wget
 which
 xdg-user-dirs-gtk
