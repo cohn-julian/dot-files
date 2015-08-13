@@ -1,6 +1,6 @@
 function defaultfunc() {
 
-  document.getElementById("search").action = "https://google.ca/search";
+  document.getElementById("search").action = "https://duckduckgo.com";
 
 }
 
