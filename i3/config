@@ -46,11 +46,22 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+b exec surf /home/julian/Documents/dot-files/Firefox/startpageL/index.html
 bindsym $mod+Shift+d exec firefox
 
-#colors
-client.focused          #268bd2 #268bd2 #282828 #b58900
-client.unfocused        #586e75 #586e75 #282828 #586e75
-client.focused_inactive #586e75 #586e75 #282828 #586e75
-client.urgent           #dc322f #dc322f #282828 #dc322f
+set $back #2C3E50
+set $text #e0e0e0
+set $blue #95A5A6
+set $red #E74C3C
+set $blue #729FCF
+set $back2 #34495E
+set $orange #E67E22
+
+# border colors			border		background		text		indicator
+client.focused          $blue       $blue           #ffffff     $orange
+client.unfocused        $back2      $back2          #ffffff     #1C1C1C
+#client.urgent          #990000     #990000         #ffffff     #990000
+client.focused_inactive $back2      $back2          $back2      $back2
+
+
+
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -185,15 +196,14 @@ bar {
 	position               top
 	
 	colors {
-       		background #282828
-       		statusline #ebdbb2
-       		separator  #073642
-
-       		                   #border backgr. text
-       		focused_workspace  #268bd2 #268bd2 #002b36
-       		active_workspace   #323232 #5f676a #ebdbb2
-       		inactive_workspace #323232 #323232 #ebdbb2
-       		urgent_workspace   #dc322f #dc322f #002b36
-		}
+            background $back 
+            #statusline $text
+            #separator $text
+            # colors           border  background  text
+            focused_workspace  $blue     $blue    $back
+            inactive_workspace $back     $back    $text
+            active_workspace   $back     $back      $text
+            urgent_workspace   #990000   #990000    #ffffff
+        }
 }
 exec --no-startup-id feh --bg-scale /home/julian/Pictures/leafe.jpg
