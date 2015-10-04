@@ -51,6 +51,7 @@ bindsym $mod+Shift+q kill
 #open surf with start page
 bindsym $mod+Shift+b exec surf /home/julian/Documents/dot-files/Firefox/startpageL/index.html
 bindsym $mod+Shift+d exec firefox
+bindsym $mod+Shift+f exec /opt/google/chrome/google-chrome --enable-plugins 
 
 set $back #2C3E50
 set $text #e0e0e0
