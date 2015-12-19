@@ -1,0 +1,254 @@
+#######################################################################
+#                              variables                              #
+#######################################################################
+
+set $mod         Mod4
+set $myres       8
+set $gsi         10
+set $gso         0
+
+set $bordersize  2
+
+set $bg-color            #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+#######################################################################
+#                           random settings                           #
+#######################################################################
+
+focus_follows_mouse     yes
+popup_during_fullscreen smart
+workspace_layout        default
+
+#######################################################################
+#                               colors                                #
+#######################################################################
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
+hide_edge_borders both
+
+#######################################################################
+#                                font                                 #
+#######################################################################
+
+font                    pango: System San Francisco Display 13
+
+#######################################################################
+#                               borders                               #
+#######################################################################
+
+hide_edge_borders       none
+gaps                    inner $gsi
+gaps                    outer $gso
+new_float               pixel $bordersize
+new_window              pixel $bordersize
+
+
+#######################################################################
+#                         launcher & terminal                         #
+#######################################################################
+
+bindsym                 $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym                 $mod+Return exec termite
+bindsym 				$mod+Shift+m exec spotify
+bindsym 				$mod+Shift+b exec surf ~/newTab.html
+bindsym 				$mod+Shift+d exec firefox
+bindsym 				$mod+Shift+f exec /opt/google/chrome/google-chrome --enable-plugins 
+
+
+#######################################################################
+#                             i3 bindings                             #
+#######################################################################
+
+bindsym                 $mod+Shift+r restart
+bindsym                 $mod+Shift+q kill
+
+#######################################################################
+#                            gaps bindings                            #
+#######################################################################
+
+bindsym                 $mod+n gaps inner all set 0;gaps outer all set 0
+bindsym                 $mod+m gaps inner all set $gsi;gaps outer all set $gso
+
+#######################################################################
+#                           audio bindings                            #
+#######################################################################
+
+#mod + f2/f3 for volume
+bindcode                $mod+68 exec amixer set Master 5%-
+bindcode                $mod+69 exec amixer set Master 5%+
+#bindsym                 XF86MonBrightnessUp exec "xbacklight -inc 5"
+#bindsym                 XF86MonBrightnessDown exec "xbacklight -dec 5"
+#bindsym                 XF86Display exec "~/.bin/display.sh"
+
+
+#######################################################################
+#                          display bindings                           #
+#######################################################################
+
+#lock screen
+bindsym                 $mod+l exec i3lock -i ~/Pictures/Screenshots/icon.png
+#suspend
+bindsym                 $mod+Shift+l exec systemctl suspend
+
+#######################################################################
+#                           focus bindings                            #
+#######################################################################
+
+# change focus
+bindsym                 $mod+h focus left
+bindsym                 $mod+t focus down
+bindsym                 $mod+n focus up
+bindsym                 $mod+s focus right
+
+# alternatively, you can use the cursor keys:
+bindsym                 $mod+Left focus left
+bindsym                 $mod+Down focus down
+bindsym                 $mod+Up focus up
+bindsym                 $mod+Right focus right
+
+# move focused window
+bindsym                 $mod+Shift+h move left
+bindsym                 $mod+Shift+t move down
+bindsym                 $mod+Shift+n move up
+bindsym                 $mod+Shift+s move right
+
+# alternatively, you can use the cursor keys:
+bindsym                 $mod+Shift+Left move left
+bindsym                 $mod+Shift+Down move down
+bindsym                 $mod+Shift+Up move up
+bindsym                 $mod+Shift+Right move right
+
+#move to next / prior workspace
+bindsym                 $mod+j workspace next
+bindsym                 $mod+q workspace prev
+
+# switch to workspace
+bindsym                 $mod+semicolon workspace "; www"
+bindsym                 $mod+a workspace "A/V"
+bindsym                 $mod+p workspace "p"
+bindsym                 $mod+k workspace "k: Term"
+bindsym                 $mod+i workspace "i: IRC"
+bindsym                 $mod+c workspace "c: Code"
+bindsym                 $mod+o workspace "Other"
+bindsym                 $mod+1 workspace 1: www
+bindsym                 $mod+2 workspace 2: term
+bindsym                 $mod+3 workspace 3: code
+bindsym                 $mod+4 workspace 4: music
+bindsym                 $mod+5 workspace 5: IRC
+bindsym                 $mod+6 workspace 6
+bindsym                 $mod+7 workspace 7
+bindsym                 $mod+8 workspace 8
+bindsym                 $mod+9 workspace 9
+bindsym                 $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym                 $mod+Shift+k move container to workspace "k: Term"
+bindsym                 $mod+Shift+o move container to workspace "Other"
+bindsym                 $mod+Shift+i move container to workspace "i: IRC"
+bindsym                 $mod+Shift+p move container to workspace "p"
+bindsym                 $mod+Shift+c move container to workspace "c: Code"
+bindsym                 $mod+Shift+a move container to workspace "A/V"
+bindsym                 $mod+Shift+semicolon move container to workspace "; www"
+bindsym                 $mod+Shift+1 move container to workspace 1: www
+bindsym                 $mod+Shift+2 move container to workspace 2: term
+bindsym                 $mod+Shift+3 move container to workspace 3: code
+bindsym                 $mod+Shift+4 move container to workspace 4: music
+bindsym                 $mod+Shift+5 move container to workspace 5: IRC
+bindsym                 $mod+Shift+6 move container to workspace 6
+bindsym                 $mod+Shift+7 move container to workspace 7
+bindsym                 $mod+Shift+8 move container to workspace 8
+bindsym                 $mod+Shift+9 move container to workspace 9
+bindsym                 $mod+Shift+0 move container to workspace 10
+
+
+
+#######################################################################
+#                           layout bindings                           #
+#######################################################################
+
+#split in horizontal orientation
+bindsym                 $mod+Shift+minus split horizontal
+
+# split in vertical orientation
+bindsym                 $mod+minus split vertical
+
+# enter fullscreen mode for the focused container
+bindsym                 $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym                 $mod+x layout toggle split
+
+# toggle tiling / floating
+bindsym                 $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym                 $mod+space focus mode_toggle
+
+#######################################################################
+#                                modes                                #
+#######################################################################
+
+mode                    "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym t resize grow height 10 px or 10 ppt
+        bindsym n resize shrink height 10 px or 10 ppt
+        bindsym s resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym                 $mod+r mode "resize"
+
+#######################################################################
+#                               startup                               #
+#######################################################################
+
+exec "compton -CGbz -r 8 -o 0.2 -l -12 -t -12 --backend glx --vsync opengl --shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c'"
+exec --no-startup-id feh --bg-scale ~/Pictures/osx.jpg
+
+#######################################################################
+#                                 bar                                 #
+#######################################################################
+
+bar {
+    status_command i3status
+    position top
+    tray_output primary
+    font pango: System San Francisco Display 10
+    separator_symbol "  "
+    workspace_buttons yes
+    binding_mode_indicator yes
+    height 28
+
+    colors {
+        background $bg-color
+        separator #757575
+        #                  border             background         text
+        focused_workspace  $bg-color          $bg-color          $text-color
+        inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+        urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+    }
+}
+
+#######################################################################
+#                         window assignments                          #
+#######################################################################
+
+assign [class="Spotify"] 10: mus

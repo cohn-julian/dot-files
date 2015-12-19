@@ -14,23 +14,23 @@ hr {
 }
 a:link {
 
-  color: rgba(0,0,0,0.55);
+  color:#d8d8d8;
 
 }
 a:visited {
 
-  color: rgba(0,0,0,0.55);
+  color:#d8d8d8;
 
 }
 a:hover {
 
-  color: rgba(0,0,0,0.55);
-  letter-spacing: 0.7px;
+  color:#d8d8d8;
+  letter-spacing: 0.9px;
 
 }
 a:active {
 
-  color: rgba(0,0,0,0.55);
+  color:#d8d8d8;
 
 }
 li {
@@ -88,7 +88,7 @@ li {
 }
 .tiles{
 
-  color: rgba(0,0,0,0.55);
+  color:#f3f4f5; 
   margin-right: auto;
   margin-left: auto;
 
@@ -127,7 +127,7 @@ li {
 .boxes {
 
   display: inline-block;
-  background-color: rgba(240, 240, 240, 1);
+  background-color:#2f343f;
   box-shadow: -3px 4px 0px 0px rgba(0,0,0,0.45);
   border: none;
   text-align: center;
